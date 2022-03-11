@@ -1,0 +1,42 @@
+.useritem {
+    position: relative;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    margin-top: 1.4rem;
+
+    background: #f3f3f3;
+    border-radius: 0.8rem;
+
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+
+    &:last-child &-row {
+        padding-bottom: 0;
+    }
+
+    &-row {
+        padding-bottom: 0.8rem;
+
+        &__title {
+            color: #a3a3a3;          
+        }
+    }
+
+    &__link {
+        position: absolute;
+
+        bottom: 1rem;
+        right: 1rem;
+
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+
+        text-decoration: none;
+
+        color: $violet;
+    }
+}
