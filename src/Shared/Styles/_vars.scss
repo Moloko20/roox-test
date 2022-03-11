@@ -1,1 +1,6 @@
-$violet: #4b51ef
+$violet: #4b51ef;
+
+@mixin simple-text {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}

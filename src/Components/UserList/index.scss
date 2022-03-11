@@ -8,4 +8,8 @@
     padding-right: 0rem;
     padding-top: 1.9rem;
     padding-bottom: 2.5rem;
+
+    &__quantity {
+        @include simple-text;
+    }
 }

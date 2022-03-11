@@ -9,6 +9,8 @@
     background: $violet;
     border-radius: 0.5rem;
 
+    @include simple-text;
+
     color: #fff;
 
     cursor: pointer;

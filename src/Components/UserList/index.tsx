@@ -26,6 +26,7 @@ export function UserList() {
         <div className="userlist">
             <h1>Список пользователей</h1>
             <UserItem />
+            <span className="userlist__quantity">Найдено 10 пользователей</span>
         </div>
     )
 }
