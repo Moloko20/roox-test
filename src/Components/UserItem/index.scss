@@ -12,14 +12,14 @@
     border-radius: 0.8rem;
 
     font-size: 1.1rem;
-    line-height: 1.3rem;
-
-    &:last-child &-row {
-        padding-bottom: 0;
-    }
+    line-height: 1.3rem;  
 
     &-row {
         padding-bottom: 0.8rem;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
 
         &__title {
             color: #a3a3a3;          
