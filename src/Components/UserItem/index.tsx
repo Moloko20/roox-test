@@ -30,6 +30,7 @@ export function UserItem() {
 
     return (
         <div className="useritem">
+            <Link />
             <div className="useritem-row">
                 <span className="useritem-row__title">{userTitles.fullName}:</span>
             </div>
@@ -39,7 +40,6 @@ export function UserItem() {
             <div className="useritem-row">
                 <span className="useritem-row__title">{userTitles.company}:</span>
             </div>
-            <Link />
         </div>
     )
 }
