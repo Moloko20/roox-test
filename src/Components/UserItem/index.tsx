@@ -1,23 +1,11 @@
 import React from 'react'
 import { Link } from 'Components/UI/Link'
 
-// export type FaceTypes = 'lose' | 'win' | 'game' | 'start'
-
-// type stateList = {
-//     [key in FaceTypes]: string
-// }
-
-// const STATE_LIST: stateList = {
-//     lose: '💀',
-//     win: '😎',
-//     game: '🙂',
-//     start: '🙂',
-// }
-
-// type faceProps = {
-//     state: FaceTypes
-//     onResetGame: () => void
-// }
+type UserType = {
+    name: string
+    city: string
+    company: string
+}
 
 const userTitles = {
     fullName: 'ФИО',
@@ -25,20 +13,23 @@ const userTitles = {
     company: 'Компания',
 }
 
-export function UserItem() {
+export function UserItem({ name, city, company }: UserType) {
     require('./index.scss')
 
     return (
         <div className="useritem">
             <Link />
             <div className="useritem-row">
-                <span className="useritem-row__title">{userTitles.fullName}:</span>
+                <span className="useritem-row__title">{userTitles.fullName}: </span>
+                {name}
             </div>
             <div className="useritem-row">
-                <span className="useritem-row__title">{userTitles.city}:</span>
+                <span className="useritem-row__title">{userTitles.city}: </span>
+                {city}
             </div>
             <div className="useritem-row">
-                <span className="useritem-row__title">{userTitles.company}:</span>
+                <span className="useritem-row__title">{userTitles.company}: </span>
+                {company}
             </div>
         </div>
     )
