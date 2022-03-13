@@ -14,7 +14,8 @@
         "paths": {
             "App": ["src/App"],
             "Components/*": ["src/Components/*"],
-            "Shared/*": ["src/Shared/*"]
+            "Shared/*": ["src/Shared/*"],
+            "Services/*": ["src/Services/*"]
         },
         "resolveJsonModule": true,
         "noEmitOnError": true,
