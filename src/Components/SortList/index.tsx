@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../UX/Button'
+import { Button } from '../UI/Button'
 
 // export type FaceTypes = 'lose' | 'win' | 'game' | 'start'
 

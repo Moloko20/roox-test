@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'Components/UX/Link'
+import { Link } from 'Components/UI/Link'
 
 // export type FaceTypes = 'lose' | 'win' | 'game' | 'start'
 
