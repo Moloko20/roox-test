@@ -16,8 +16,6 @@ const userTitles = {
 function UserItemComponent({ name, city, company }: UserType) {
     require('./index.scss')
 
-    console.log('rerender')
-
     return (
         <div className="useritem">
             <Link />

@@ -10,8 +10,6 @@ export function ButtonComponent({ title, btnClick }: ButtonProps) {
         btnClick(title)
     }
 
-    console.log('rerender btn')
-
     require('./index.scss')
 
     return (

@@ -15,8 +15,6 @@ export function SortListComponent() {
 
     require('./index.scss')
 
-    console.log('rerender sortlist')
-
     return (
         <aside className="sortlist">
             <h2>Сортировка</h2>
