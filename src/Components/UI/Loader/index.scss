@@ -1,0 +1,23 @@
+.loader {
+    width: 6rem;
+    height: 6rem;
+
+    border: 0.8rem solid $light-gray;
+    border-top: 0.8rem solid $violet;
+    border-radius: 50%;
+    
+    animation: spin 1s linear infinite;
+
+    &-wrapper {
+        margin-top: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
