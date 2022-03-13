@@ -1,37 +1,24 @@
 import React from 'react'
 
-// export type FaceTypes = 'lose' | 'win' | 'game' | 'start'
-
-// type stateList = {
-//     [key in FaceTypes]: string
-// }
-
-// const STATE_LIST: stateList = {
-//     lose: '💀',
-//     win: '😎',
-//     game: '🙂',
-//     start: '🙂',
-// }
-
-// type faceProps = {
-//     state: FaceTypes
-//     onResetGame: () => void
-// }
-
 type ButtonProps = {
     title: string
+    btnClick: (title: string) => void
 }
 
-export function Button({ title }: ButtonProps) {
-    const onClick = () => {
-        console.log(title)
+export function ButtonComponent({ title, btnClick }: ButtonProps) {
+    const btnHendler = () => {
+        btnClick(title)
     }
+
+    console.log('rerender btn')
 
     require('./index.scss')
 
     return (
-        <button className="button" onClick={onClick}>
+        <button className="button" onClick={btnHendler}>
             {title}
         </button>
     )
 }
+
+export const Button = React.memo(ButtonComponent)
