@@ -13,8 +13,10 @@ const userTitles = {
     company: 'Компания',
 }
 
-export function UserItem({ name, city, company }: UserType) {
+function UserItemComponent({ name, city, company }: UserType) {
     require('./index.scss')
+
+    console.log('rerender')
 
     return (
         <div className="useritem">
@@ -34,3 +36,5 @@ export function UserItem({ name, city, company }: UserType) {
         </div>
     )
 }
+
+export const UserItem = React.memo(UserItemComponent)
