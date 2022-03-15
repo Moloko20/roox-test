@@ -1,0 +1,19 @@
+.userlist {
+    display: flex;
+    flex-direction: column;
+
+    width: 51.2rem;
+
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
+    padding-top: 1.9rem;
+    padding-bottom: 2.5rem;
+
+    &__quantity {
+        align-self: flex-end;
+
+        margin-top: 1rem;
+
+        @include simple-text;
+    }
+}
