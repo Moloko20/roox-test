@@ -3,9 +3,10 @@ import React from 'react'
 type InputTypeProps = {
     inputTitle: string
     inputType: string
+    inputValue: string
 }
 
-export function Input({ inputTitle, inputType }: InputTypeProps) {
+export function Input({ inputTitle, inputType, inputValue = '' }: InputTypeProps) {
     require('./index.scss')
 
     const editHandler = () => {}
@@ -14,12 +15,19 @@ export function Input({ inputTitle, inputType }: InputTypeProps) {
 
     switch (inputType) {
         case 'text':
-            input = <input type="text" className="input__field" onClick={editHandler} />
+            input = (
+                <input
+                    type="text"
+                    className="input__field"
+                    onChange={editHandler}
+                    defaultValue={inputValue}
+                />
+            )
             break
 
         case 'textarea':
             input = (
-                <textarea className="input__field input__field--textarea" onClick={editHandler} />
+                <textarea className="input__field input__field--textarea" onChange={editHandler} />
             )
             break
 
