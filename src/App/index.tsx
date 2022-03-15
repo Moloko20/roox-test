@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { SortList } from 'Components/SortList'
-import { UsersList, UserType } from 'Components/UserList'
+import { UsersList, UserType } from 'Components/UsersList'
 import { Loader } from 'Components/UI/Loader'
+import { Profile } from 'Components/Profile'
 
 import { getUsers } from 'Services/getUsers'
 
@@ -83,7 +85,10 @@ function App() {
                         <Loader />
                     </div>
                 ) : (
-                    <UsersList users={users} />
+                    <Routes>
+                        <Route path="/" element={<UsersList users={users} />} />
+                        <Route path="/profile" element={<Profile />} />
+                    </Routes>
                 )}
             </section>
         </Context.Provider>
@@ -92,7 +97,9 @@ function App() {
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root'),
 )
