@@ -37,9 +37,15 @@
             resize: vertical;
         }
 
+        &--error {
+            border-color: #D91313;
+        }
+
         &:disabled {
             color: rgba(0, 0, 0, 0.3);
         }
+
+        
     }
 
     

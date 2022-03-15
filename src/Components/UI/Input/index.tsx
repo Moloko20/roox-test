@@ -5,12 +5,31 @@ type InputTypeProps = {
     inputType: string
     inputValue: string
     inputStatus: true | false
+    inputRequired: true | false
+    inputChange: (value: string, title: string) => void
 }
 
-export function Input({ inputTitle, inputType, inputValue = '', inputStatus }: InputTypeProps) {
-    require('./index.scss')
+type inputEventType = React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
 
-    const editHandler = () => {}
+export function InputComponent({
+    inputTitle,
+    inputType,
+    inputValue = '',
+    inputStatus,
+    inputRequired,
+    inputChange,
+}: InputTypeProps) {
+    const [inputError, setInputError] = React.useState(false)
+
+    const editHandler = React.useCallback((event: inputEventType) => {
+        if (inputRequired && !event.target.value) {
+            setInputError(true)
+        } else {
+            setInputError(false)
+        }
+
+        inputChange(event.target.value, event.target.title)
+    }, [])
 
     let input
 
@@ -19,10 +38,12 @@ export function Input({ inputTitle, inputType, inputValue = '', inputStatus }: I
             input = (
                 <input
                     type="text"
-                    className="input__field"
+                    className={inputError ? 'input__field input__field--error' : 'input__field'}
                     onChange={editHandler}
                     defaultValue={inputValue}
                     disabled={inputStatus}
+                    required={inputRequired}
+                    title={inputTitle}
                 />
             )
             break
@@ -30,9 +51,15 @@ export function Input({ inputTitle, inputType, inputValue = '', inputStatus }: I
         case 'textarea':
             input = (
                 <textarea
-                    className="input__field input__field--textarea"
+                    className={
+                        inputError
+                            ? 'input__field input__field--error input__field--textarea'
+                            : 'input__field input__field--textarea'
+                    }
                     onChange={editHandler}
                     disabled={inputStatus}
+                    required={inputRequired}
+                    title={inputTitle}
                 />
             )
             break
@@ -41,6 +68,8 @@ export function Input({ inputTitle, inputType, inputValue = '', inputStatus }: I
             break
     }
 
+    require('./index.scss')
+
     return (
         <div className="input">
             <span className="input__title">{inputTitle}</span>
@@ -48,3 +77,5 @@ export function Input({ inputTitle, inputType, inputValue = '', inputStatus }: I
         </div>
     )
 }
+
+export const Input = React.memo(InputComponent)
