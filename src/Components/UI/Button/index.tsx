@@ -4,9 +4,10 @@ type ButtonProps = {
     title: string
     btnClick: (title: string) => void
     btnClass?: string
+    btnDisabled?: true | false
 }
 
-export function ButtonComponent({ title, btnClick, btnClass = '' }: ButtonProps) {
+export function ButtonComponent({ title, btnClick, btnClass = '', btnDisabled }: ButtonProps) {
     const btnHendler = () => {
         btnClick(title)
     }
@@ -16,7 +17,7 @@ export function ButtonComponent({ title, btnClick, btnClass = '' }: ButtonProps)
     require('./index.scss')
 
     return (
-        <button className={nameClass} onClick={btnHendler}>
+        <button className={nameClass} onClick={btnHendler} disabled={btnDisabled}>
             {title}
         </button>
     )

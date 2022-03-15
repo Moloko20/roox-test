@@ -4,9 +4,10 @@ type InputTypeProps = {
     inputTitle: string
     inputType: string
     inputValue: string
+    inputStatus: true | false
 }
 
-export function Input({ inputTitle, inputType, inputValue = '' }: InputTypeProps) {
+export function Input({ inputTitle, inputType, inputValue = '', inputStatus }: InputTypeProps) {
     require('./index.scss')
 
     const editHandler = () => {}
@@ -21,13 +22,18 @@ export function Input({ inputTitle, inputType, inputValue = '' }: InputTypeProps
                     className="input__field"
                     onChange={editHandler}
                     defaultValue={inputValue}
+                    disabled={inputStatus}
                 />
             )
             break
 
         case 'textarea':
             input = (
-                <textarea className="input__field input__field--textarea" onChange={editHandler} />
+                <textarea
+                    className="input__field input__field--textarea"
+                    onChange={editHandler}
+                    disabled={inputStatus}
+                />
             )
             break
 

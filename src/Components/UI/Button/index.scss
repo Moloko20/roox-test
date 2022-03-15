@@ -22,4 +22,8 @@
     &--send {
         background: #52cf4f;
     }
+
+    &:disabled {
+        background: #afafaf;
+    }
 }

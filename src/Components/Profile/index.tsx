@@ -9,6 +9,8 @@ type ProfileProps = {
 }
 
 export function Profile({ user }: ProfileProps) {
+    const [isDisabled, setIsDisabled] = React.useState(true)
+
     const inputs = [
         {
             title: 'Name',
@@ -57,7 +59,9 @@ export function Profile({ user }: ProfileProps) {
         },
     ]
 
-    const editHandler = () => {}
+    const editHandler = () => {
+        setIsDisabled(false)
+    }
 
     const sendHandler = () => {}
 
@@ -82,11 +86,17 @@ export function Profile({ user }: ProfileProps) {
                             inputTitle={input.title}
                             inputType={input.type}
                             inputValue={input.value}
+                            inputStatus={isDisabled}
                         />
                     ))}
                 </div>
                 <div className="profile-footer">
-                    <Button title={'Отправить'} btnClick={sendHandler} btnClass={'button--send'} />
+                    <Button
+                        title={'Отправить'}
+                        btnClick={sendHandler}
+                        btnClass={'button--send'}
+                        btnDisabled={isDisabled}
+                    />
                 </div>
             </div>
         </div>
