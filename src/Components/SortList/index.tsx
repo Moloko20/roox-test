@@ -7,10 +7,10 @@ import { Context } from 'Contexts/context'
 const buttonsTitles = ['по городу', 'по компании']
 
 export function SortListComponent() {
-    const sorting = React.useContext(Context)
+    const context = React.useContext(Context)
 
     const btnHendlerProp = React.useCallback((title: string) => {
-        sorting(title)
+        context.sortingFN(title)
     }, [])
 
     require('./index.scss')
