@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { SortList } from 'Components/SortList'
-import { UsersList, UserType } from 'Components/UsersList'
+import { UsersList } from 'Components/UsersList'
+import { UserType } from 'Components/UserItem'
 import { Loader } from 'Components/UI/Loader'
 import { Profile } from 'Components/Profile'
 
@@ -38,6 +39,7 @@ const sortByCompany = (a: UserType, b: UserType) => {
 function App() {
     const [isLoading, setIsLoading] = React.useState(false)
     const [users, setUsers] = React.useState([])
+    const [currentUser, setcurrentUser] = React.useState<UserType>()
 
     React.useEffect(() => {
         const loadData = async () => {
@@ -73,10 +75,14 @@ function App() {
         }
     }
 
+    const setUser = (user: UserType) => {
+        setcurrentUser(user)
+    }
+
     require('./index.scss')
 
     return (
-        <Context.Provider value={sorting}>
+        <Context.Provider value={{ sortingFN: sorting, setUserFN: setUser }}>
             <section className="users">
                 <SortList />
 
@@ -87,7 +93,7 @@ function App() {
                 ) : (
                     <Routes>
                         <Route path="/" element={<UsersList users={users} />} />
-                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/profile" element={<Profile user={currentUser} />} />
                     </Routes>
                 )}
             </section>
