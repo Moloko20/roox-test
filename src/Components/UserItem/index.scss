@@ -11,8 +11,7 @@
     background: $light-gray;
     border-radius: 0.8rem;
 
-    font-size: 1.4rem;
-    line-height: 1.6rem;  
+    @include simple-text;  
 
     &-row {
         padding-bottom: 0.8rem;
@@ -32,8 +31,7 @@
         bottom: 1rem;
         right: 1rem;
 
-        font-size: 1.4rem;
-        line-height: 1.6rem;
+        @include simple-text;
 
         text-decoration: none;
 

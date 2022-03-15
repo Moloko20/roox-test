@@ -12,8 +12,7 @@
 
         margin-bottom: 0.3rem;
 
-        font-size: 1.4rem;
-        line-height: 1.6rem;
+        @include simple-text;
     }
 
     &__field {
@@ -28,7 +27,7 @@
         box-sizing: border-box;
         border-radius: 8px;
 
-        line-height: 1.2rem;
+        @include simple-text;
 
         &--textarea {
             width: 100%;
