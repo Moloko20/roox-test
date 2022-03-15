@@ -8,7 +8,7 @@
 
     margin-top: 1.4rem;
 
-    background: $light-gray;
+    background-color: $light-gray;
     border-radius: 0.8rem;
 
     @include simple-text;  
@@ -31,10 +31,16 @@
         bottom: 1rem;
         right: 1rem;
 
-        @include simple-text;
-
         text-decoration: none;
 
+        @include simple-text;
+
         color: $violet;
+
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $hover-violet;
+        }
     }
 }

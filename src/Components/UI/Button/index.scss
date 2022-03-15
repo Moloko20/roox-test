@@ -6,7 +6,7 @@
 
     margin-top: 1rem;
 
-    background: $violet;
+    background-color: $violet;
     border-radius: 5px;
 
     @include simple-text;
@@ -14,18 +14,28 @@
     color: #fff;
 
     cursor: pointer;
+
+    transition: background-color 0.2s ease;
     
     &--edit {
         margin-top: 0;
     }
 
     &--send {
-        background: #52cf4f;
+        background-color: #52cf4f;
+
+        &:hover:not(&:disabled) {
+            background-color: #49e545;
+        }
     }
 
     &:disabled {
-        background: #afafaf;
+        background-color: #afafaf;
 
         cursor: not-allowed;
+    }
+
+    &:hover:not(&:disabled):not(&--send) {
+        background-color: $hover-violet;
     }
 }

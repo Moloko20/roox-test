@@ -29,6 +29,8 @@
 
         @include simple-text;
 
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+
         &--textarea {
             width: 100%;
             min-height: 5.5rem;
@@ -38,14 +40,22 @@
         }
 
         &--error {
-            border-color: #D91313;
+            border-color: #d91313;
+
+            &:active:not(&:disabled), &:focus {
+                background-color: $light-gray;
+            }
         }
 
         &:disabled {
             color: rgba(0, 0, 0, 0.3);
         }
 
-        
+        &:active:not(&:disabled):not(&--error), 
+        &:focus:not(&--error) {
+            background-color: $light-gray;
+            border-color: #dbdbdb;
+        }
     }
 
     

@@ -96,7 +96,7 @@ export function Profile({ user }: ProfileProps) {
         if (!validate()) {
             console.log(JSON.stringify(formData.inputs))
         } else {
-            console.log('Что-то пошло не так')
+            console.log('Something is wrong!')
         }
     }
 
