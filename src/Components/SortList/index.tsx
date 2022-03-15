@@ -9,8 +9,12 @@ const buttonsTitles = ['по городу', 'по компании']
 export function SortListComponent() {
     const context = React.useContext(Context)
 
-    const btnHendlerProp = React.useCallback((title: string) => {
-        context.sortingFN(title)
+    const btnSortCity = React.useCallback(() => {
+        context.sortByCity()
+    }, [])
+
+    const btnSortCompany = React.useCallback(() => {
+        context.sortByCompany()
     }, [])
 
     require('./index.scss')
@@ -18,8 +22,8 @@ export function SortListComponent() {
     return (
         <aside className="sortlist">
             <h2>Сортировка</h2>
-            <Button title={buttonsTitles[0]} btnClick={btnHendlerProp} />
-            <Button title={buttonsTitles[1]} btnClick={btnHendlerProp} />
+            <Button title={buttonsTitles[0]} btnClick={btnSortCity} />
+            <Button title={buttonsTitles[1]} btnClick={btnSortCompany} />
         </aside>
     )
 }
