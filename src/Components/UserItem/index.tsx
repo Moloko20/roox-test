@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'Components/UI/Link'
+import { Link } from 'react-router-dom'
 
 type UserType = {
     name: string
@@ -18,7 +18,9 @@ function UserItemComponent({ name, city, company }: UserType) {
 
     return (
         <div className="useritem">
-            <Link />
+            <Link className="useritem__link" to="/profile">
+                Подробнее
+            </Link>
             <div className="useritem-row">
                 <span className="useritem-row__title">{userTitles.fullName}: </span>
                 {name}
