@@ -39,6 +39,7 @@ module.exports = () => {
             },
             port: 4200,
             open: true,
+            historyApiFallback: true,
         },
         plugins: [
             new HtmlWebpackPlugin({
