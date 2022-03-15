@@ -10,16 +10,27 @@ export function Input({ inputTitle, inputType }: InputTypeProps) {
 
     const editHandler = () => {}
 
-    let className = 'input__field'
+    let input
 
-    if (inputType === 'textarea') {
-        className += ' input__field--textarea'
+    switch (inputType) {
+        case 'text':
+            input = <input type="text" className="input__field" onClick={editHandler} />
+            break
+
+        case 'textarea':
+            input = (
+                <textarea className="input__field input__field--textarea" onClick={editHandler} />
+            )
+            break
+
+        default:
+            break
     }
 
     return (
         <div className="input">
             <span className="input__title">{inputTitle}</span>
-            <input type={inputType} className={className} onClick={editHandler} />
+            {input}
         </div>
     )
 }
