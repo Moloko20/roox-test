@@ -6,7 +6,7 @@ type UsersType = {
     users: UserType[]
 }
 
-export function UsersList({ users }: UsersType) {
+function UsersListComponent({ users }: UsersType) {
     require('./index.scss')
 
     return (
@@ -25,3 +25,5 @@ export function UsersList({ users }: UsersType) {
         </>
     )
 }
+
+export const UsersList = React.memo(UsersListComponent)
