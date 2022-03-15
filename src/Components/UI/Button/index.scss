@@ -25,5 +25,7 @@
 
     &:disabled {
         background: #afafaf;
+
+        cursor: not-allowed;
     }
 }
