@@ -1,10 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-type UserType = {
+import { Context } from 'Contexts/context'
+
+export type UserType = {
+    id: number
     name: string
-    city: string
-    company: string
+    username: string
+    email: string
+    address: {
+        street: string
+        city: string
+        zipcode: string
+    }
+    phone: string
+    website: string
+    company: {
+        name: string
+    }
+}
+
+type UserTypeProp = {
+    user: UserType
 }
 
 const userTitles = {
@@ -13,25 +30,31 @@ const userTitles = {
     company: 'Компания',
 }
 
-function UserItemComponent({ name, city, company }: UserType) {
+function UserItemComponent({ user }: UserTypeProp) {
+    const context = React.useContext(Context)
+
+    const linkHandler = (user: UserType) => {
+        context.setUserFN(user)
+    }
+
     require('./index.scss')
 
     return (
         <div className="useritem">
-            <Link className="useritem__link" to="/profile">
+            <Link className="useritem__link" to="/profile" onClick={() => linkHandler(user)}>
                 Подробнее
             </Link>
             <div className="useritem-row">
                 <span className="useritem-row__title">{userTitles.fullName}: </span>
-                {name}
+                {user.name}
             </div>
             <div className="useritem-row">
                 <span className="useritem-row__title">{userTitles.city}: </span>
-                {city}
+                {user.address.city}
             </div>
             <div className="useritem-row">
                 <span className="useritem-row__title">{userTitles.company}: </span>
-                {company}
+                {user.company.name}
             </div>
         </div>
     )
