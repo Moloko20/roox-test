@@ -1,0 +1,38 @@
+.input {
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        display: block;
+
+        padding-left: 0.2rem;
+
+        margin-bottom: 0.3rem;
+
+        font-size: 0.8rem;
+        line-height: 0.9rem;
+    }
+
+    &__field {
+        width: 21rem;
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+
+        border: 1px solid $light-gray;
+        box-sizing: border-box;
+        border-radius: 8px;
+
+        line-height: 1.2rem;
+
+        &--textarea {
+            width: 100%;
+            min-height: 5.5rem;
+        }
+    }
+}
