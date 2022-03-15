@@ -22,7 +22,7 @@ export function UsersList({ users }: UsersType) {
 
     return (
         <>
-            <div className="userlist">
+            <div className="userslist">
                 <h1>Список пользователей</h1>
                 {users.map(user => {
                     if (users.length > 0) {

@@ -49,7 +49,7 @@ export function Profile() {
     const editHandler = () => {}
 
     return (
-        <div className="userlist">
+        <div className="userslist">
             <div className="profile">
                 <div className="profile-header">
                     <h1>Профиль пользователя</h1>
