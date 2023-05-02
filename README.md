@@ -23,9 +23,5 @@ Run project:
 npm run watch
 ```
 
-## Contributing
-
-Please do not make any changes. You can contact me at the email address listed in my profile.
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
